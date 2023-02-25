@@ -59,3 +59,14 @@ h1 {
   font-weight: 600;
   margin-bottom: 3px;
 }
+
+.errorMsg {
+  color: red;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.msgOK {
+  color: green;
+  margin-top: 15px;
+}
