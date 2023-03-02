@@ -1,0 +1,22 @@
+.primaryContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 70px 0;
+}
+
+.quizeCotainer {
+  background-color: #f0f7f5;
+  width: 80%;
+  max-width: 550px;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #dfdfdf;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.category {
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+}

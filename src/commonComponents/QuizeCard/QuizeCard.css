@@ -1,0 +1,17 @@
+.quizeControler {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dfdfdf;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.questionContainer {
+  display: flex;
+  font-size: 1.1rem;
+  padding-bottom: 1rem;
+}
+
+.questionNumber {
+  margin-right: 20px;
+}

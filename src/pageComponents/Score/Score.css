@@ -1,0 +1,48 @@
+.primaryContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreCotainer {
+  background-color: #f0f7f5;
+  width: 70%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #dfdfdf;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.score {
+  font-size: 60px;
+  text-align: center;
+}
+
+.score span {
+  font-size: 30px;
+}
+
+.topPlayers {
+  margin-top: 20px;
+  background-color: #39707a;
+  padding: 10px;
+}
+
+.topPlayersList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepButtonContainer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
