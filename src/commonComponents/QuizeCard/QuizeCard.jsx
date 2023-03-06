@@ -6,17 +6,16 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import "./QuizeCard.css";
 
-export const QuizeCard = ({
-  number,
-  question,
-  collectAnswer,
-  wrongAnswer1,
-  wrongAnswer2,
-  wrongAnswer3,
-}) => {
-  const [value, setValue] = React.useState("female");
+export const QuizeCard = ({ number, question, answers, updateQuizAnswer }) => {
+  const [value, setValue] = React.useState("");
+
+  React.useEffect(() => {
+    updateQuizAnswer(value);
+  }, [value]);
   const handleChange = (event) => {
-    setValue(event.target.value);
+    console.log("v", event.target.value);
+    const newValue = JSON.parse(JSON.stringify(event.target.value));
+    setValue(newValue);
   };
 
   return (
@@ -33,26 +32,15 @@ export const QuizeCard = ({
           value={value}
           onChange={handleChange}
         >
-          <FormControlLabel
-            value={collectAnswer}
-            control={<Radio />}
-            label={collectAnswer}
-          />
-          <FormControlLabel
-            value={wrongAnswer1}
-            control={<Radio />}
-            label={wrongAnswer1}
-          />
-          <FormControlLabel
-            value={wrongAnswer2}
-            control={<Radio />}
-            label={wrongAnswer2}
-          />
-          <FormControlLabel
-            value={wrongAnswer3}
-            control={<Radio />}
-            label={wrongAnswer3}
-          />
+          {answers.map((data) => {
+            return (
+              <FormControlLabel
+                value={JSON.stringify(data)}
+                control={<Radio />}
+                label={data.answer}
+              />
+            );
+          })}
         </RadioGroup>
       </FormControl>
     </div>
