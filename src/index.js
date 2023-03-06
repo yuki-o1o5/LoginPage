@@ -19,7 +19,7 @@ root.render(
         <Route path="/account" element={<Account />} />
         <Route path="/start" element={<Start />} />
         <Route path="/end" element={<End />} />
-        <Route path="/main" element={<Main />} />
+        <Route path="/main/:category" element={<Main />} />
       </Routes>
     </Router>
   </React.StrictMode>
