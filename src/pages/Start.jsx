@@ -1,15 +1,10 @@
-import Container from "../pageComponents/Container/Container";
+import Categories from "../pageComponents/Categories/Categories";
 import "./Start.css";
 
-function Start({ props }) {
+function Start() {
   return (
     <div>
-      <Container
-        category1="hello"
-        category2="love"
-        category3="computer"
-        category4="science"
-      />
+      <Categories />
     </div>
   );
 }
