@@ -1,15 +1,20 @@
 h1 {
   margin: 20px 0 10px;
+  color: #1c2638;
+  font-family: "Lora", serif;
 }
 
 .accountLink {
   display: flex;
   align-items: center;
+  color: #1c2638;
+  font-family: "Lora", serif;
 }
 
-.accountLink a {
+.link-to-login {
   text-decoration: none;
   padding-left: 10px;
+  font-weight: bold;
 }
 
 .formCotainer {
@@ -20,11 +25,11 @@ h1 {
   align-items: center;
 }
 
-.formCotainer form {
+.formControl {
   background-color: #f0f7f5;
-  width: 70%;
+  width: 50%;
   max-width: 450px;
-  padding: 30px;
+  padding: 45px 60px;
   border-radius: 10px;
   border: 1px solid #dfdfdf;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -35,7 +40,11 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 400px;
+  height: 380px;
+}
+
+.formFeildControler {
+  width: 100%;
 }
 
 .formFeild {
@@ -46,8 +55,12 @@ h1 {
 
 .formFeild input {
   border: 1px solid grey;
-  padding: 20px;
-  border-radius: 4px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.formFeild input::placeholder {
+  color: #1c2638;
 }
 
 .formFeild input :focus {
@@ -57,16 +70,19 @@ h1 {
 .formFeild label {
   font-size: 15px;
   font-weight: 600;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
 }
 
 .errorMsg {
   color: #9b222b;
   margin: 0;
   align-self: flex-start;
+  padding: 10px 0 0 15px;
+  font-size: 0.9rem;
 }
 
 .msgOK {
   color: green;
   margin-top: 15px;
+  font-family: "Lora", serif;
 }
