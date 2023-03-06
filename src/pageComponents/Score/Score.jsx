@@ -1,8 +1,7 @@
 import StepButtonSm from "../../commonComponents/StepButtonSm/StepButtonSm.jsx";
-import TopPlayer from "../../commonComponents/TopPlayer/TopPlayer.jsx";
 import "./Score.css";
 
-function Score({ myScore, allQ, order, userName }) {
+function Score({ myScore, allQ, userName1, userName2, userName3 }) {
   return (
     <div className="primaryContainer">
       <div className="scoreCotainer">
@@ -16,14 +15,28 @@ function Score({ myScore, allQ, order, userName }) {
         <div className="topPlayers">
           <h2>Top 3 players</h2>
           <div className="topPlayersList">
-            <TopPlayer order={order} userName={userName} />
-            <TopPlayer order={order} userName={userName} />
-            <TopPlayer order={order} userName={userName} />
+            <div className="orderContainer">
+              <div className="bar2">2</div>
+              <div className="orderName">
+                <div>{userName2}</div>
+              </div>
+            </div>
+            <div className="orderContainer">
+              <div className="bar1">1</div>
+              <div className="orderName">
+                <div>{userName1}</div>
+              </div>
+            </div>
+            <div className="orderContainer">
+              <div className="bar3">3</div>
+              <div className="orderName">
+                <div>{userName3}</div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="stepButtonContainer">
-          <StepButtonSm word="Category" />
-          <StepButtonSm word="ReStart" />
+          <StepButtonSm word="Try Again" />
         </div>
       </div>
     </div>
