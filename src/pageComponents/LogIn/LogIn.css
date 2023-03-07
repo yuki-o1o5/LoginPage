@@ -1,0 +1,9 @@
+errorMsgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.errorMsg {
+  color: #9b222b;
+  font-size: 1.1;
+}

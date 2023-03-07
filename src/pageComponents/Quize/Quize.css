@@ -21,3 +21,23 @@
   padding-bottom: 2rem;
   font-family: "Lora", serif;
 }
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 200px;
+  background-color: #39707a;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #23495d;
+}
