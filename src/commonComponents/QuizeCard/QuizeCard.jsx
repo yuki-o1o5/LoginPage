@@ -12,6 +12,7 @@ export const QuizeCard = ({ number, question, answers, updateQuizAnswer }) => {
   React.useEffect(() => {
     updateQuizAnswer(value);
   }, [value]);
+
   const handleChange = (event) => {
     console.log("v", event.target.value);
     const newValue = JSON.parse(JSON.stringify(event.target.value));
@@ -32,12 +33,13 @@ export const QuizeCard = ({ number, question, answers, updateQuizAnswer }) => {
           value={value}
           onChange={handleChange}
         >
-          {answers.map((data) => {
+          {answers.map((data, index) => {
             return (
               <FormControlLabel
                 value={JSON.stringify(data)}
                 control={<Radio />}
                 label={data.answer}
+                key={index}
               />
             );
           })}
