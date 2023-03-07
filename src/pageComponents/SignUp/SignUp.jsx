@@ -13,7 +13,7 @@ function SignUp() {
   const handleChange = (e) => {
     // console.log(e.target.name);
     const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setFormValues({ ...formValues, [name]: value.toLowerCase() });
     console.log(formValues);
   };
 

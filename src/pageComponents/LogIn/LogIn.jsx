@@ -29,13 +29,13 @@ function LogIn() {
         user.passWord === formValues.passWord
     );
     if (matchedUser) {
-      console.log("Sucess");
-      localStorage.setItem("currentUser", formValues.username)
+      // console.log("Sucess");
+      localStorage.setItem("currentUser", formValues.username.toLowerCase());
       navigate("/start");
     } else {
       console.log("failed");
-      setFormErrors({ login: "Incorrect email address or password" });
-      console.log(formErrors);
+      setFormErrors({ login: "Incorrect email address or password." });
+      // console.log(formErrors);
     }
   };
 
@@ -131,7 +131,11 @@ function LogIn() {
           >
             Log in
           </Button>
-          {formErrors.login && <span>Error: {formErrors.login}</span>}
+          {formErrors.login && (
+            <div className="errorMsgContainer">
+              <div className="errorMsg">ERROR: {formErrors.login}</div>
+            </div>
+          )}
           {Object.keys(formErrors).length === 0 && isSubmit && (
             <div className="msgOK">
               Sucess!{" "}
