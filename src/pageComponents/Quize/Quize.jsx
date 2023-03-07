@@ -3,25 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./Quize.css";
 import React from "react";
 
-function Quize({ fetchData, number }) {
+function Quize({ fetchData }) {
   const [selectedAnswers, setSelectedAnswers] = React.useState([]);
   const navigate = useNavigate();
 
   function updateSelectedAnswer(value, idx) {
-    // Here you will add answers to the selectedAnnswers
-    // setSelectedAnswers([...selectedAnswers, ...value]);
-    // const newArray = [];
-    // newArray.unshift(value);
-    // let finalArray = [...selectedAnswers, ...newArray];
-    // // You have to check if that id of the same questions exists inside the final array or not. If it exists, then don't add it.
-    // finalArray = finalArray
-    //   .filter((item) => item)
-    //   .map((item) => {
-    //     if (typeof item === "string") {
-    //       item = JSON.parse(item);
-    //     }
-    //     return item;
-    //   });
     const newAnswers = [...selectedAnswers];
     const valueObj = JSON.parse(value || "{}");
     newAnswers[idx] = valueObj.answer;
@@ -29,7 +15,6 @@ function Quize({ fetchData, number }) {
   }
 
   function calculateScore() {
-    // fetchData  = [{},{},..], selectedAnswers = ["asn1", "ans2",...];
     let score = 0;
     fetchData.forEach((quize, idx) => {
       if (quize.correctAnswer === selectedAnswers[idx]) {
@@ -37,12 +22,13 @@ function Quize({ fetchData, number }) {
       }
     });
     // set to local storage
-    const existingData = JSON.parse(localStorage.getItem("userData"));
+    let existingData = JSON.parse(localStorage.getItem("userData"));
     const existingUser = localStorage.getItem("currentUser");
-    existingData.forEach((user) => {
+    existingData = existingData.map((user) => {
       if (user.username === existingUser) {
         user.score = score;
       }
+      return user;
     });
     localStorage.setItem("userData", JSON.stringify(existingData));
     navigate("/end");
@@ -55,7 +41,7 @@ function Quize({ fetchData, number }) {
   return (
     <div className="primaryContainer">
       <div className="quizeCotainer">
-        <div className="category">Category</div>
+        <div className="category"></div>
         {fetchData.map((item, idx) => {
           const answers = item.incorrectAnswers.map((answer) => {
             return {
@@ -64,11 +50,6 @@ function Quize({ fetchData, number }) {
               isCorrect: false,
             };
           });
-          // const randomNumberIndex = Math.random() * 3;
-          // answers.splice(randomNumberIndex, 0, {
-          //   answer: item.correctAnswer,
-          //   isCorrect :true
-          // }, )
           answers.splice(0, 0, {
             answer: item.correctAnswer,
             isCorrect: true,
@@ -86,7 +67,11 @@ function Quize({ fetchData, number }) {
             />
           );
         })}
-        <button onClick={calculateScore}>submit</button>
+        <div className="buttonContainer">
+          <button className="button" onClick={calculateScore}>
+            SUBMIT
+          </button>
+        </div>
       </div>
     </div>
   );
