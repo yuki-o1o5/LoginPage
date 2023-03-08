@@ -75,7 +75,7 @@ function LogIn() {
       <form className="formControl" onSubmit={(event) => handleSubmit(event)}>
         <h1>Log in</h1>
         <div className="accountLink">
-          <p className="signUpLink">New to This Game? </p>
+          <p className="signUpLink">New to This Quiz? </p>
           <Link to="/account">
             <span className="link-to-login">Create New Account</span>
           </Link>
