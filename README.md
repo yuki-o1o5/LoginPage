@@ -9,6 +9,14 @@ The app allows users to fetch questions from an external API, create an account,
 * The app stores the user's progress in the local storage.
 * Users can see their score at the end of the Quiz.
 
+## UI development
+
+  <img src="https://github.com/yuki-o1o5/Quiz-app/blob/main/src/images/readmeImages/login.png" alt="login of image" height="300">
+  <img src="https://github.com/yuki-o1o5/Quiz-app/blob/main/src/images/readmeImages/categories.png" alt="categories of image" height="300">
+  <img src="https://github.com/yuki-o1o5/Quiz-app/blob/main/src/images/readmeImages/quiz.png" alt="quiz of image" height="300">
+  <img src="https://github.com/yuki-o1o5/Quiz-app/blob/main/src/images/readmeImages/score.png" alt="score of image" height="300">
+
+
 ## Installation
 To run the Quiz app locally, follow these steps:
 
