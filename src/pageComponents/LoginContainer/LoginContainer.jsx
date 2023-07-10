@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
-import "./LogIn.css";
+import "./LoginContainer.css";
 
-function LogIn() {
+function LoginContainer() {
   const initialValues = { username: "", mailAddress: "", passWord: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -12,7 +12,6 @@ function LogIn() {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    // console.log(e.target.name);
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
@@ -29,13 +28,10 @@ function LogIn() {
         user.passWord === formValues.passWord
     );
     if (matchedUser) {
-      // console.log("Sucess");
       localStorage.setItem("currentUser", formValues.username.toLowerCase());
-      navigate("/start");
+      navigate("/category");
     } else {
-      console.log("failed");
       setFormErrors({ login: "Incorrect email address or password." });
-      // console.log(formErrors);
     }
   };
 
@@ -43,9 +39,7 @@ function LogIn() {
     const errors = {};
     const regex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (!values.username) {
-      errors.username = "Use name is required.";
-    }
+
     if (!values.mailAddress) {
       errors.mailAddress = "E-mail adress is required.";
     } else if (!regex.test(values.mailAddress)) {
@@ -76,24 +70,12 @@ function LogIn() {
         <h1>Log in</h1>
         <div className="accountLink">
           <p className="signUpLink">New to This Quiz? </p>
-          <Link to="/account">
+          <Link to="/signup">
             <span className="link-to-login">Create New Account</span>
           </Link>
         </div>
         <hr />
         <div className="uiForm">
-          <div className="formFeildControler">
-            <div className="formFeild">
-              {/* <label>User Name</label> */}
-              <input
-                type="text"
-                placeholder="User name"
-                name="username"
-                onChange={(event) => handleChange(event)}
-              />
-            </div>
-            <p className="errorMsg">{formErrors.username}</p>
-          </div>
           <div className="formFeildControler">
             <div className="formFeild">
               {/* <label>E-mail adress</label> */}
@@ -150,4 +132,4 @@ function LogIn() {
   );
 }
 
-export default LogIn;
+export default LoginContainer;

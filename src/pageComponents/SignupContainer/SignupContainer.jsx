@@ -2,19 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
-import "./SignUp.css";
+import "./SignupContainer.css";
 
-function SignUp() {
+function SignupContainer() {
   const initialUser = { username: "", mailAddress: "", passWord: "" };
   const [formValues, setFormValues] = useState(initialUser);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
-    // console.log(e.target.name);
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value.toLowerCase() });
-    console.log(formValues);
   };
 
   const handleSubmit = (e) => {
@@ -74,7 +72,7 @@ function SignUp() {
       <form className="formControl" onSubmit={(event) => handleSubmit(event)}>
         <h1>Sign Up</h1>
         <div className="accountLink">
-          <p className="signUpLink">Already have an account? </p>
+          <p className="SignupContainerLink">Already have an account? </p>
           <Link to="/">
             <span className="link-to-login">Log in</span>
           </Link>
@@ -144,4 +142,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignupContainer;

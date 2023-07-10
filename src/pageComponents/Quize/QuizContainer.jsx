@@ -1,9 +1,9 @@
 import { QuizeCard } from "../../commonComponents/QuizeCard/QuizeCard";
 import { useNavigate } from "react-router-dom";
-import "./Quize.css";
+import "./QuizContainer.css";
 import React from "react";
 
-function Quize({ fetchData }) {
+function QuizContainer({ fetchData }) {
   const [selectedAnswers, setSelectedAnswers] = React.useState([]);
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ function Quize({ fetchData }) {
       return user;
     });
     localStorage.setItem("userData", JSON.stringify(existingData));
-    navigate("/end");
+    navigate("/result");
   }
 
   React.useEffect(() => {
@@ -77,4 +77,4 @@ function Quize({ fetchData }) {
   );
 }
 
-export default Quize;
+export default QuizContainer;

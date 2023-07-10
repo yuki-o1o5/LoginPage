@@ -5,25 +5,25 @@ import historyImg from "../../images/history.jpg";
 import foodImg from "../../images/food.jpg";
 import musicImg from "../../images/music.jpg";
 import movieImg from "../../images/movie.jpg";
-import "./Categories.css";
+import "./CategoryContainer.css";
 
-function Container() {
+function CategoryContainer() {
   const navigate = useNavigate();
 
   const goToHistoryQuiz = () => {
-    navigate("/main/history");
+    navigate("/quiz/history");
   };
 
   const goToFoodDrinkQuiz = () => {
-    navigate("/main/food_and_drink");
+    navigate("/quiz/food_and_drink");
   };
 
   const goToMusicQuiz = () => {
-    navigate("/main/music");
+    navigate("/quiz/music");
   };
 
   const goToTvMovieQuiz = () => {
-    navigate("/main/film_and_tv");
+    navigate("/quiz/film_and_tv");
   };
 
   const theme = createTheme({
@@ -105,4 +105,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default CategoryContainer;

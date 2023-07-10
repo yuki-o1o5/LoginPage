@@ -1,11 +1,14 @@
 import Score from "../pageComponents/Score/Score";
-import "./End.css";
+import "./ResultPage.css";
 
-function End() {
+function ResultPage() {
   let currentScore;
-
   const existingData = JSON.parse(localStorage.getItem("userData"));
   const existingUser = localStorage.getItem("currentUser");
+  if (!existingData || existingData.length === 0) {
+    // Render empty data or a message for no data
+    return <div>No data available</div>;
+  }
   existingData.forEach((user) => {
     if (user.username === existingUser) {
       currentScore = user.score;
@@ -85,4 +88,4 @@ function End() {
   );
 }
 
-export default End;
+export default ResultPage;

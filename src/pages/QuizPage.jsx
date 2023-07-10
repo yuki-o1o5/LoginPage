@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Quize from "../pageComponents/Quize/Quize";
-import "./Main.css";
+import QuizContainer from "../pageComponents/Quize/QuizContainer";
 
-const Main = () => {
+
+const QuizPage = () => {
   const [fetchData, setFetchData] = useState([]);
   let params = useParams();
   const { category } = params;
-  // console.log("category", category);
+
   useEffect(() => {
     const fetchQuize = async (limit, difficulty) => {
       try {
@@ -25,9 +25,9 @@ const Main = () => {
 
   return (
     <div>
-      <Quize fetchData={fetchData} />
+      <QuizContainer fetchData={fetchData} />
     </div>
   );
 };
 
-export default Main;
+export default QuizPage;
