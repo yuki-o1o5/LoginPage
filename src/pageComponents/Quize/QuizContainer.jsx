@@ -1,10 +1,10 @@
 import { QuizeCard } from "../../commonComponents/QuizeCard/QuizeCard";
 import { useNavigate } from "react-router-dom";
 import "./QuizContainer.css";
-import React from "react";
+import { useEffect, useState } from "react";
 
-function QuizContainer({ fetchData }) {
-  const [selectedAnswers, setSelectedAnswers] = React.useState([]);
+function QuizContainer({ fetchData, category }) {
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
   const navigate = useNavigate();
 
   function updateSelectedAnswer(value, idx) {
@@ -30,18 +30,19 @@ function QuizContainer({ fetchData }) {
       }
       return user;
     });
+
     localStorage.setItem("userData", JSON.stringify(existingData));
     navigate("/result");
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     console.log(selectedAnswers, "selected Aswer");
   }, [selectedAnswers]);
 
   return (
     <div className="primaryContainer">
       <div className="quizeCotainer">
-        <div className="category"></div>
+        <div className="category">{category}</div>
         {fetchData.map((item, idx) => {
           const answers = item.incorrectAnswers.map((answer) => {
             return {

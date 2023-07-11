@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import QuizContainer from "../pageComponents/Quize/QuizContainer";
 
-
 const QuizPage = () => {
   const [fetchData, setFetchData] = useState([]);
   let params = useParams();
@@ -25,7 +24,7 @@ const QuizPage = () => {
 
   return (
     <div>
-      <QuizContainer fetchData={fetchData} />
+      <QuizContainer fetchData={fetchData} category={category} />
     </div>
   );
 };
