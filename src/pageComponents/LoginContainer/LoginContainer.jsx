@@ -122,12 +122,7 @@ function LoginContainer() {
             </div>
           )}
           {Object.keys(formErrors).length === 0 && isSubmit && (
-            <div className="msgOK">
-              Sucess!{" "}
-              <Link to="/start">
-                <span className="link-to-login"> Start Game</span>
-              </Link>
-            </div>
+            <div className="msgOK">Sucess!</div>
           )}
         </div>
       </form>

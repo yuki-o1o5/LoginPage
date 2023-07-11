@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import "./SignupContainer.css";
@@ -9,6 +9,7 @@ function SignupContainer() {
   const [formValues, setFormValues] = useState(initialUser);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +32,9 @@ function SignupContainer() {
         "userData",
         JSON.stringify([...existingData, newData])
       );
+      setTimeout(() => {
+        navigate("/");
+      }, 1500);
 
       setIsSubmit(true);
     }
@@ -129,12 +133,7 @@ function SignupContainer() {
             Sign up
           </Button>
           {Object.keys(formErrors).length === 0 && isSubmit && (
-            <div className="msgOK">
-              Sucess!{" "}
-              <Link to="/">
-                <span className="link-to-login"> Log in</span>
-              </Link>
-            </div>
+            <div className="msgOK">Sucess!</div>
           )}
         </div>
       </form>
