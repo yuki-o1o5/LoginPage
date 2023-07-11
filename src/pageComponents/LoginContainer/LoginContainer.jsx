@@ -19,19 +19,22 @@ function LoginContainer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormErrors(validate(formValues));
+    const errors = validate(formValues);
+    setFormErrors(errors);
     setIsSubmit(true);
-    const storedUsers = JSON.parse(localStorage.getItem("userData")) || [];
-    const matchedUser = storedUsers.find(
-      (user) =>
-        user.mailAddress === formValues.mailAddress &&
-        user.passWord === formValues.passWord
-    );
-    if (matchedUser) {
-      localStorage.setItem("currentUser", formValues.username.toLowerCase());
-      navigate("/category");
-    } else {
-      setFormErrors({ login: "Incorrect email address or password." });
+    if (Object.keys(errors).length === 0) {
+      const storedUsers = JSON.parse(localStorage.getItem("userData")) || [];
+      const matchedUser = storedUsers.find(
+        (user) =>
+          user.mailAddress === formValues.mailAddress &&
+          user.passWord === formValues.passWord
+      );
+      if (matchedUser) {
+        localStorage.setItem("currentUser", matchedUser.username.toLowerCase());
+        navigate("/category");
+      } else {
+        setFormErrors({ login: "Incorrect email address or password." });
+      }
     }
   };
 

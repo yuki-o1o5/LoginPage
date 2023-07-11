@@ -2,9 +2,9 @@ import Button from "@mui/material/Button";
 import { createTheme } from "@mui/material/styles";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Score.css";
+import "./ScoreContainer.css";
 
-function Score({ myScore, allQ, userName1, userName2, userName3 }) {
+function ScoreContainer({ myScore, allQ, userName1, userName2, userName3 }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function Score({ myScore, allQ, userName1, userName2, userName3 }) {
   }, []);
 
   const goToCategoriesPage = () => {
-    navigate("/start");
+    navigate("/category");
   };
 
   const goToLoginPage = () => {
@@ -42,13 +42,18 @@ function Score({ myScore, allQ, userName1, userName2, userName3 }) {
             <h2>Top 3 players</h2>
             <div className="topPlayersList">
               <div className="orderContainer">
-                <div className="bar2">2</div>
-              </div>
-              <div className="orderContainer">
                 <div className="bar1">1</div>
               </div>
+              {userName2 ? (
+                <div className="orderContainer">
+                  <div className="bar2">2</div>
+                </div>
+              ) : (
+                ""
+              )}
+
               <div className="orderContainer">
-                <div className="bar3">3</div>
+                {userName3 ? <div className="bar3">3</div> : ""}
               </div>
             </div>
             <hr className="underBar" />
@@ -90,4 +95,4 @@ function Score({ myScore, allQ, userName1, userName2, userName3 }) {
   );
 }
 
-export default Score;
+export default ScoreContainer;
