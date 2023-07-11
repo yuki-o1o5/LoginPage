@@ -1,4 +1,4 @@
-import { QuizeCard } from "../../commonComponents/QuizeCard/QuizeCard";
+import { QuizeCard } from "../QuizeCard/QuizeCard";
 import { useNavigate } from "react-router-dom";
 import "./QuizContainer.css";
 import { useEffect, useState } from "react";
