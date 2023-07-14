@@ -1,9 +1,105 @@
-errorMsgContainer {
+.formCotainer {
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.formControl {
+  background-color: #f0f7f5;
+  width: 25%;
+  padding: 45px 60px;
+  border-radius: 10px;
+  border: 1px solid #dfdfdf;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #1c2638;
+  font-family: "Lora", serif;
+}
+
+.link_container {
+  color: #1c2638;
+  font-family: "Lora", serif;
+}
+
+.link-to-signup {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.uiForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.formFeildControler {
+  width: 100%;
+}
+
+.formFeild {
+  margin: 15px 0 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formFeild input {
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.formFeild input::placeholder {
+  color: #1c2638;
+}
+
+.formFeild input :focus {
+  outline: none;
+}
+
+.formFeild label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.buttonContainer {
+  margin-top: 30px;
+  width: 100%;
 }
 
 .errorMsg {
   color: #9b222b;
-  font-size: 1.1;
+  margin: 0;
+  align-self: flex-start;
+  font-size: 0.9rem;
+}
+
+.msgOK {
+  color: green;
+  margin-top: 15px;
+  font-family: "Lora", serif;
+}
+
+@media (max-width: 798px) {
+  .formControl {
+    width: 60%;
+    padding: 20px 40px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  .link-to-login {
+    padding-left: 0;
+  }
 }

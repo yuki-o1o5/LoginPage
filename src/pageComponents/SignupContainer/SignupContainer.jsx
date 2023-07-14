@@ -85,7 +85,6 @@ function SignupContainer() {
         <div className="uiForm">
           <div className="formFeildControler">
             <div className="formFeild">
-              {/* <label>User Name</label> */}
               <input
                 type="text"
                 placeholder="User name"
@@ -97,7 +96,6 @@ function SignupContainer() {
           </div>
           <div className="formFeildControler">
             <div className="formFeild">
-              {/* <label>E-mail adress</label> */}
               <input
                 type="text"
                 placeholder="E-mail address"
@@ -109,9 +107,8 @@ function SignupContainer() {
           </div>
           <div className="formFeildControler">
             <div className="formFeild">
-              {/* <label>Password</label> */}
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 name="passWord"
                 onChange={(event) => handleChange(event)}
@@ -119,19 +116,19 @@ function SignupContainer() {
             </div>
             <p className="errorMsg">{formErrors.passWord}</p>
           </div>
-
-          <Button
-            theme={theme}
-            variant="contained"
-            className="submitButton"
-            sx={{ p: 1.5 }}
-            type="submit"
-            currsol="point"
-            fullWidth
-            style={{ borderRadius: 10 }}
-          >
-            Sign up
-          </Button>
+          <div className="buttonContainer">
+            <Button
+              theme={theme}
+              variant="contained"
+              className="submitButton"
+              type="submit"
+              currsol="point"
+              fullWidth
+              style={{ borderRadius: 10 }}
+            >
+              Sign up
+            </Button>
+          </div>
           {Object.keys(formErrors).length === 0 && isSubmit && (
             <div className="msgOK">Sucess!</div>
           )}

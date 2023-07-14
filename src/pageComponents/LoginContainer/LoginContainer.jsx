@@ -71,17 +71,16 @@ function LoginContainer() {
     <div className="formCotainer">
       <form className="formControl" onSubmit={(event) => handleSubmit(event)}>
         <h1>Log in</h1>
-        <div className="accountLink">
-          <p className="signUpLink">New to This Quiz? </p>
+        <div className="link_container">
+          <p className="LoginContainerLink">New to This Quiz? </p>
           <Link to="/signup">
-            <span className="link-to-login">Create New Account</span>
+            <span className="link-to-signup">Create New Account</span>
           </Link>
         </div>
         <hr />
         <div className="uiForm">
           <div className="formFeildControler">
             <div className="formFeild">
-              {/* <label>E-mail adress</label> */}
               <input
                 type="text"
                 placeholder="E-mail adress"
@@ -93,9 +92,8 @@ function LoginContainer() {
           </div>
           <div className="formFeildControler">
             <div className="formFeild">
-              {/* <label>Password</label> */}
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 name="passWord"
                 onChange={(event) => handleChange(event)}
@@ -103,19 +101,20 @@ function LoginContainer() {
             </div>
             <p className="errorMsg">{formErrors.passWord}</p>
           </div>
-
-          <Button
-            theme={theme}
-            variant="contained"
-            className="submitButton"
-            sx={{ p: 1.5 }}
-            type="submit"
-            currsol="point"
-            fullWidth
-            style={{ borderRadius: 10 }}
-          >
-            Log in
-          </Button>
+          <div className="buttonContainer">
+            <Button
+              theme={theme}
+              variant="contained"
+              className="submitButton"
+              sx={{ p: 1.5 }}
+              type="submit"
+              currsol="point"
+              fullWidth
+              style={{ borderRadius: 10 }}
+            >
+              Log in
+            </Button>
+          </div>
           {formErrors.login && (
             <div className="errorMsgContainer">
               <div className="errorMsg">ERROR: {formErrors.login}</div>

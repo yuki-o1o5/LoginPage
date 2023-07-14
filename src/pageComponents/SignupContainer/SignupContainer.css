@@ -1,22 +1,3 @@
-h1 {
-  margin: 20px 0 10px;
-  color: #1c2638;
-  font-family: "Lora", serif;
-}
-
-.accountLink {
-  display: flex;
-  align-items: center;
-  color: #1c2638;
-  font-family: "Lora", serif;
-}
-
-.link-to-login {
-  text-decoration: none;
-  padding-left: 20px;
-  font-weight: bold;
-}
-
 .formCotainer {
   height: 100vh;
   width: 100%;
@@ -27,12 +8,28 @@ h1 {
 
 .formControl {
   background-color: #f0f7f5;
-  width: 50%;
-  max-width: 450px;
+  width: 25%;
   padding: 45px 60px;
   border-radius: 10px;
   border: 1px solid #dfdfdf;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #1c2638;
+  font-family: "Lora", serif;
+}
+
+.accountLink {
+  color: #1c2638;
+  font-family: "Lora", serif;
+}
+
+.link-to-login {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .uiForm {
@@ -40,7 +37,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  height: 380px;
 }
 
 .formFeildControler {
@@ -48,6 +44,7 @@ h1 {
 }
 
 .formFeild {
+  margin: 15px 0 0px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -55,8 +52,9 @@ h1 {
 
 .formFeild input {
   border: 1px solid grey;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
+  margin-top: 10px;
 }
 
 .formFeild input::placeholder {
@@ -73,11 +71,15 @@ h1 {
   margin-bottom: 10px;
 }
 
+.buttonContainer {
+  margin-top: 30px;
+  width: 100%;
+}
+
 .errorMsg {
   color: #9b222b;
   margin: 0;
   align-self: flex-start;
-  padding: 10px 0 0 15px;
   font-size: 0.9rem;
 }
 
@@ -85,4 +87,22 @@ h1 {
   color: green;
   margin-top: 15px;
   font-family: "Lora", serif;
+}
+
+@media (max-width: 798px) {
+  .formControl {
+    width: 60%;
+    padding: 20px 40px;
+  }
+  .accountLink {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  .link-to-login {
+    padding-left: 0;
+  }
 }
